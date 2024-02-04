@@ -6,7 +6,7 @@ interface DashboardScreenProps { }
 const DashboardScreen = (props: DashboardScreenProps) => {
     return (
         <View style={styles.container}>
-            <Text>DashboardScreen</Text>
+            <Text style={{ color: '#000' }}>DashboardScreen</Text>
         </View>
     );
 };
@@ -14,5 +14,9 @@ const DashboardScreen = (props: DashboardScreenProps) => {
 export default DashboardScreen;
 
 const styles = StyleSheet.create({
-    container: {}
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
 });

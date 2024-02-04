@@ -6,7 +6,7 @@ interface MoreScreenProps { }
 const MoreScreen = (props: MoreScreenProps) => {
     return (
         <View style={styles.container}>
-            <Text>MoreScreen</Text>
+            <Text style={{ color: '#000' }}>More Screen</Text>
         </View>
     );
 };
@@ -14,5 +14,9 @@ const MoreScreen = (props: MoreScreenProps) => {
 export default MoreScreen;
 
 const styles = StyleSheet.create({
-    container: {}
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
 });

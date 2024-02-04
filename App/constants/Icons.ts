@@ -13,7 +13,13 @@ import search_dark from '../assets/icons/search-dark.svg'
 import seat_regular from '../assets/icons/seat-regular.svg'
 import seat_unavailable from '../assets/icons/seat-unavailable.svg'
 import seat_vip from '../assets/icons/seat-vip.svg'
+import seat_selected from '../assets/icons/seat-selected.svg'
+import seat_regular_large from '../assets/icons/seat-regular-large.svg'
+import seat_unavailable_large from '../assets/icons/seat-unavailable-large.svg'
+import seat_vip_large from '../assets/icons/seat-vip-large.svg'
+import seat_selected_large from '../assets/icons/seat-selected-large.svg'
 import watch_active from '../assets/icons/watch-active.svg'
+import seats from '../assets/icons/seats.svg'
 
 const Icons = {
     //Watch
@@ -32,7 +38,14 @@ const Icons = {
     seat_regular,
     seat_unavailable,
     seat_vip,
-    watch_active
+    seat_selected,
+    watch_active,
+    seats,
+    seat_regular_large,
+    seat_unavailable_large,
+    seat_vip_large,
+    seat_selected_large
+
 }
 
 export default Icons

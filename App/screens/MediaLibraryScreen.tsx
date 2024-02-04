@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 interface MediaLibraryScreenProps { }
 
 const MediaLibraryScreen = (props: MediaLibraryScreenProps) => {
     return (
         <View style={styles.container}>
-            <Text>MediaLibraryScreen</Text>
+            <Text style={{ color: '#000' }}>Media Library Screen</Text>
         </View>
     );
 };
@@ -14,5 +14,9 @@ const MediaLibraryScreen = (props: MediaLibraryScreenProps) => {
 export default MediaLibraryScreen;
 
 const styles = StyleSheet.create({
-    container: {}
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
 });

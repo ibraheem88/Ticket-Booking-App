@@ -8,19 +8,23 @@ import {
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import Colors from './App/constants/Colors';
 import Fonts from './App/constants/Fonts';
 import Icons from './App/constants/Icons';
 import { MainStackParamList, MyTabParamList, WatchStackParamList } from './App/helpers/types';
+import BookingConfirmationScreen from './App/screens/BookingConfirmationScreen';
+import BookingScreen from './App/screens/BookingScreen';
 import DashboardScreen from './App/screens/DashboardScreen';
 import MediaLibraryScreen from './App/screens/MediaLibraryScreen';
 import MoreScreen from './App/screens/MoreScreen';
+import MovieDetailScreen from './App/screens/MovieDetailScreen';
+import SearchScreen from './App/screens/SearchScreen';
+import TrailerScreen from './App/screens/TrailerScreen';
 import WatchScreen from './App/screens/WatchScreen';
 import { persistor, store } from './App/state/store';
 
 const Dashboard = Icons.dashboard_inactive
 const DashboardActive = Icons.dashboard_inactive
-//const MediaLibraryActive=Icons.media_inactive
+//const MediaLibraryActive=Icons.media_active
 const Watch = Icons.watch_active
 const WatchActive = Icons.watch_active
 const MediaLibrary = Icons.media_inactive
@@ -40,13 +44,17 @@ const WatchStack = () => {
         name={'WatchScreen'}
         component={WatchScreen}
       />
+      <WatchStackNav.Screen
+        name={'SearchScreen'}
+        component={SearchScreen}
+      />
     </WatchStackNav.Navigator>
   );
 }
 
 function MyTabs() {
   return (
-    <Tab.Navigator screenOptions={{ tabBarStyle: { paddingBottom: 16, height: 87, paddingTop: 12, backgroundColor: '#2E2739' }, tabBarHideOnKeyboard: true }}>
+    <Tab.Navigator screenOptions={{ tabBarStyle: styles.tabBar, tabBarHideOnKeyboard: true }} initialRouteName='Watch'>
       <Tab.Screen name="Dashboard" component={DashboardScreen} options={{
         headerShown: false,
         tabBarIcon: ({ focused }) => focused ? <DashboardActive /> : <Dashboard />,
@@ -82,6 +90,22 @@ const MainStack = () => {
         name={'BottomTabs'}
         component={MyTabs}
       />
+      <WatchStackNav.Screen
+        name={'MovieDetailScreen'}
+        component={MovieDetailScreen}
+      />
+      <WatchStackNav.Screen
+        name={'BookingScreen'}
+        component={BookingScreen}
+      />
+      <WatchStackNav.Screen
+        name={'BookingConfirmationScreen'}
+        component={BookingConfirmationScreen}
+      />
+      <WatchStackNav.Screen
+        name={'TrailerScreen'}
+        component={TrailerScreen}
+      />
     </Stack.Navigator>
   );
 };
@@ -107,6 +131,14 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  tabBar: {
+    borderTopLeftRadius: 35,
+    borderTopRightRadius: 35,
+    paddingBottom: 16,
+    height: 87,
+    paddingTop: 12,
+    backgroundColor: '#2E2739'
   },
   tabBarlabel: {
     color: '#827D88',

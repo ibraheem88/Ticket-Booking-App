@@ -12,8 +12,21 @@ export type MovieState = []
 export type WatchStackParamList = {
     WatchScreen: undefined,
     SearchScreen: undefined,
-    MovieDetailScreen: undefined,
-    BookingScreen: undefined
+    MovieDetailScreen: {
+        id: number
+    },
+    BookingScreen: {
+        name: string,
+        release_date: string
+    },
+    BookingConfirmationScreen: {
+        hall: any,
+        name: string,
+        release_date: string
+    },
+    TrailerScreen: {
+        id: number
+    }
 };
 
 export type MainStackParamList = {
@@ -26,3 +39,9 @@ export type MyTabParamList = {
     MediaLibrary: undefined;
     More: undefined;
 };
+
+//Apis
+
+export type callback = (res: any) => void;
+
+export type errorCallback = (res: any) => void;
